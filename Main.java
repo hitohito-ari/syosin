@@ -1,19 +1,14 @@
-import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        String[] sift = {"田中", "秋山", "三浦", "坂口", "山田", "原口", "木村", "古口", "大田"};
+        String[] taime = {"8時～16時半", "8時半～17時", "8時半～12時半"};
 
-        System.out.println("予定を入力してください");
-        String name = scanner.nextLine();
-
-        System.out.println("日付を入力してください");
-        String date = scanner.nextLine();
-
-        System.out.println("時間を入力してください");
-        String shift = scanner.nextLine();
-
-        System.out.println("スケジュール");
-        System.out.println(name + date + shift);
+        Random rand = new Random();
+        for (int i = 0; i < sift.length; i++) {
+            int t = rand.nextInt(taime.length);
+            System.out.println(sift[i] + taime[t]);
+        }
     }
 }
